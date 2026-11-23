@@ -1,9 +1,7 @@
-# Updated feature coverage
+# Current feature coverage
 
-Implemented: revised headline; branded footer; original-style vector logo; category prices; five fictional provider profiles with generated portraits; matching progress and automatic incremental responses; sorting; full estimated totals; ₹50 doorstep service fee; provisional offers; pickup request/confirmation; final quote approval; checkout simulation; operational tracking; star reviews; separate fit/timeliness feedback; original-tailor correction pickup with timing acknowledgement and full correction tracking; on-site availability notice; privacy/terms/help routes; `/inside`; Netlify SPA fallback.
+All original preview features remain: five garment categories and prices; ₹50 per-request doorstep fee; provider matching; provisional offers; selection; pickup request and confirmation; quote approval; checkout simulation; tracking; reviews and separate fit/timing feedback; same-tailor corrections; local availability notices; help; terms/privacy; and the Inside StitchRush page.
 
-The attachment's embedded media was a screenshot of the existing website, not a separate replacement-logo asset. The delivered vector logo retains the StitchRush mark and colours shown in that screenshot.
+Updated visual layer: supplied logo, seven supplied WebP photographs, editorial typography, interactive selection cards, CSS thread animation, reduced-motion support, accessible error associations and refreshed responsive layouts. Original garment drawings remain.
 
-Contact action: in-app enquiry interface; no fictional callable number or live agent is presented. Provider portraits and ratings are illustrative. Work galleries use garment drawings, not claimed real work photographs.
-
-Not connected: live provider accounts, booking server, real measurement/address collection, push/email notifications, payment processing, public review service or A/B analytics. These require separate live infrastructure and appropriate data handling.
+The app retains browser-local data and simulated operations. See REDESIGN_HANDOVER.md for complete asset placement and verification.
