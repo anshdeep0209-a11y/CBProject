@@ -1,0 +1,29 @@
+{
+  "test_a_source_and_archives_modified": false,
+  "only_existing_source_file_changed": [
+    "src/main.jsx"
+  ],
+  "targeted_main_edits_reversible_to_exact_baseline": true,
+  "all_styles_and_assets_unchanged": true,
+  "business_model_unchanged": true,
+  "ga4_id": "G-TKFV5R5BV0",
+  "html_tag_unchanged": true,
+  "existing_model_tests_passed": 18,
+  "new_tracking_tests_passed": 7,
+  "geometry_comparison_widths": [
+    360,
+    390,
+    768,
+    1024,
+    1440
+  ],
+  "geometry_and_link_position_match_at_every_width": true,
+  "card_prices_visible_A": 5,
+  "card_prices_visible_B": 0,
+  "browser_exposure_not_sent_before_cards_visible": true,
+  "browser_exposure_event_sent_after_visible_dwell": true,
+  "browser_explore_click_event_and_services_navigation_verified": true,
+  "baseline_received_B_events": false,
+  "garment_selection_and_focus_preserved": true,
+  "live_ga4_property_receipt_verified": false
+}
