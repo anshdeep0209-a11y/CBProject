@@ -1,25 +1,26 @@
-# Verification record
+# Release verification — 23 November 2026
 
-Checked locally on 23 November 2026. No GitHub repository, Netlify production deployment or GoDaddy DNS change was made in the user's accounts.
+## Automated checks
 
-## Automated
+18 model tests pass, including capability/deadline matching, five suitable fixtures, invalid and withdrawn offers, one-provider selection, requirements invalidation, reopened availability, future pickup slots, separate pickup confirmation, instruction revisions and quote approval, consistent totals, checkout consent and duplicate prevention, retained return commitments, post-delivery feedback, original-tailor correction through return delivery, incremental responses, local alert state, persistence and Indian date boundaries.
 
-`npm test`: 15 passing behavioural tests for validation, deadline/material matching, unknown-material flags, selection exclusivity, withdrawn offers, requirement revisions, provider switching, pickup confirmation, approval gates, price arithmetic, declined quotes, delays, delivery/correction gates, persistence parsing and IST date boundaries.
+Production build: `npm run build` completes successfully. Framework bundler notices about dependency `use client` directives do not stop the static build.
 
-`npm run build`: successful Vite production build. Dependencies and versions are pinned in package.json and package-lock.json. The Node engine requirement is compatible with configured Node 22. Local commands used Node 24; Node 22 installation itself was not separately exercised.
+## Browser checks
 
-Build output includes index.html, bundled JS/CSS, original SVG assets and _redirects. SPA fallback syntax is configured for Netlify. Actual Netlify routing and SSL must be checked after importing/deploying the project.
+- Home → request review → submit → automatic incremental responses → five profiles → selection → pickup request/confirmation → collection/assessment → approved quote → simulated UPI checkout → ready/dispatch/delivery → star review and separate fit/timing feedback.
+- Correction request remains assigned to the original provider; pickup request/confirmation and correction tracking reviewed. Subsequent correction collection/work/return transitions are covered by the model tests.
+- No-availability screen offers editing, recheck and device-level alert. Rechecking a feasible request shows the availability notice.
+- Pricing card action opens the request form with garment selected. ₹50 service fee and the example ₹190 approved total checked.
+- Privacy and service-terms footer links render correctly.
+- `/inside` was refreshed directly. A rendering issue found during QA was fixed and the page was rechecked successfully.
+- Narrow browser viewport checked using browser zoom, 449 CSS px. Request content width equalled viewport width; no horizontal overflow observed. Pricing layout and mobile navigation reviewed. This is responsive browser QA, not a physical-phone certification.
+- Saved requests remained available after page refresh.
 
-## Browser interaction
+## Packaging
 
-- Desktop: submitted a shirt request, generated responses, opened a provider, selected a pickup, separately confirmed pickup, simulated collection/assessment, checked approval was disabled before consent, approved the Rs 220 quote, advanced to delivery, saved separate fit/timing feedback and requested a correction.
-- Reloaded the feedback route and observed saved feedback and correction state.
-- Narrow responsive layout: exercised a second full journey through feedback at approximately 454 CSS px browser width (desktop zoom), including stacked forms/cards and mobile navigation. DOM checks found no horizontal page overflow on the checked home/profile/quote/feedback layouts.
-- Used keyboard Enter to advance demo stages. Opened a policy dialog and closed with Escape; focus returned to the triggering button.
-- Opened /inside and reloaded it directly in the local preview successfully.
+Prebuilt ZIP has index.html and _redirects at its root, with all compiled and image assets. Source ZIP contains the editable project, lockfile, Netlify settings and updated instructions, without node_modules or generated dist. Netlify SPA fallback is included for direct/refresh navigation.
 
-This is not a physical-phone test, an accessibility certification, a live service pilot or a production load/security assessment. Additional public-domain/incognito/phone checks are in the deployment guide.
+## Limits
 
-## Remaining account steps
-
-User creates/uploads the GitHub repository, imports it into Netlify, confirms public visibility, connects stitchrushh.com and www, verifies DNS/HTTPS, and repeats the full flow on the published domain. The guide explains these steps.
+No production deployment was performed for this release. No actual tailoring, live support, payment, email or SMS delivery was tested or represented. No A/B experiment or real customer usability study has been run on this release. No real provider contact details were supplied. Operational events and checkout are simulated; generated portraits and fixture ratings are illustrative.

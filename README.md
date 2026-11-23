@@ -1,84 +1,52 @@
 # StitchRush
 
-A responsive Consumer Behaviour classroom prototype for **stitchrushh.com**.
+Clothes that fit. Without the tailor trips.
 
-## Start here — no terminal required
+Updated source package for stitchrushh.com. Built with React and Vite; deployable as static files on Netlify.
 
-Read `docs/DEPLOYMENT_GUIDE.md`. It explains how to create a private GitHub repository, upload the source through the browser, import it into Netlify and connect the GoDaddy domain.
+## Use the right ZIP
 
-- **Source ZIP**: extract and upload its contents to GitHub. `package.json`, `netlify.toml`, `src` and `public` must be at the repository root.
-- **Netlify deploy ZIP**: prebuilt files for optional drag-and-drop deployment. It is not the source repository.
-- Domain: `stitchrushh.com` (two h's before `.com`). Keep domain registration/DNS at GoDaddy.
+- **StitchRush_Netlify_Deploy_Final.zip**: prebuilt website. Extract it and upload the folder containing `index.html`, `_redirects` and `assets/` to the existing Netlify project's Deploys page. No local build is needed.
+- **StitchRush_Source_Final.zip**: editable project for GitHub. Extract it; put the CONTENTS of `stitchrush/` at the repository root. The ZIP itself is not the website source layout.
 
-## Local development (optional)
+For a Git-connected Netlify project: build command `npm run build`, publish directory `dist`, Node 22.12+ (Node 22 is configured). `netlify.toml` supplies these settings. Retain the current domain and DNS configuration.
 
-Install Node.js 22.12+ (current Node 22 LTS), open a terminal in this folder, then run:
+## Run locally
 
 ```sh
 npm ci
+npm test
 npm run dev
 ```
 
-Open the Local URL printed by Vite. Do not double-click `index.html` as a file.
+For a production build, run `npm run build`. The generated `dist/` folder is the uploadable website. Dependencies and generated output are excluded from the source ZIP.
 
-```sh
-npm test
-npm run build
-npm run preview
-```
+## Updated experience
 
-- React 19 + Vite 8 + React Router.
-- Netlify build command: `npm run build`.
-- Publish directory: `dist`.
-- Node version: `22` (configured in `.nvmrc` and `netlify.toml`).
-- No environment variables, paid APIs, server functions or database required.
-- `public/_redirects` is copied to the build and contains `/* /index.html 200`; this allows refreshing `/inside` and other client routes.
+- Professional branded footer and the revised headline.
+- Prices shown during garment/alteration selection and request review.
+- ₹50 combined fitting, pickup and return fee per request, consistent across estimates and final quotes.
+- Matching progress with automatically arriving provider cards; five illustrative providers for the four preset areas, subject to garment, material and deadline matching.
+- Sorting by return time, estimated total or rating.
+- No-availability alternatives and on-site availability alerts.
+- Pickup request and separate confirmation, fitting assessment, instructions and final quote approval.
+- UPI/card checkout simulation with no payment information or funds collected.
+- Delivery tracking, 1–5 rating, separate fit and punctuality questions.
+- Correction pickup routed to the original tailor, customer timing acknowledgement, confirmation and full correction tracking.
+- `/inside` with consumer-behaviour reasoning and the planned CTA experiment. The A/B test is not running and no analytics are installed.
 
-## Implemented
+## What is live and what is illustrative
 
-Home, Services, How It Works, Pricing, Privacy, My Requests and `/inside`; validated request review; capability/material/deadline matching; labelled sample offers and ratings; sorting; provider profiles and share links; pickup selection and confirmation; assessment; final quote approval; stage tracking and delays; feedback and correction requests; policy/help dialogs; deterministic demo controls; device-local persistence; empty/error states; simulated pilot-interest form.
+This package is a browser-local interactive preview. It has no supplier, support, email, push-notification or payment backend. Operational updates use the collapsible **Preview controls**. Notifications appear on this website only; they are not sent by email or SMS. Requests and reviews stay in this browser. Profiles, ratings, distances and availability are example data. All five tailor portraits are AI-generated fictional people and do not establish provider identity or real workmanship. Garment images are original vector illustrations.
 
-## Presentation flow
+The ₹50 service fee is a proposed interface price, not validated unit economics. Actual supplier onboarding, service area validation, booking infrastructure and commercial terms are separate work.
 
-See `docs/DEMO_GUIDE.md`. Open a request's **Demo controls — simulated operations** panel to generate responses and advance physical service stages. Final quote approval is a separate customer action. Use sample information only.
+The previous classroom banner, repeated project wording, Delhi NCR footer label and student-project footer sentence were removed at the user's explicit request. The supplied course brief requires that sentence; this requested presentation change therefore differs from that requirement. Concise preview, privacy and payment disclosures remain at the relevant actions.
 
-## Evidence and limitations
+No real addresses, phone numbers, measurements or payment details should be entered. There is no live contact number because no actual provider contacts were supplied; profile enquiries are simulated on-device.
 
-The site is a classroom prototype. No real tailor is contacted, no physical service is booked and no money is collected. Ratings, reviews, provider identities, distances and prices are sample data. Original SVG illustrations are bundled locally; they are not real workmanship photographs.
+## Routing
 
-Requests and feedback stay in browser local storage. Draft selections stay in session storage. The email-interest action discards its input and does not subscribe anyone. No real addresses, contact details, measurements or personal photos should be entered. Clear demo data from Privacy or Demo controls.
+`public/_redirects` contains `/* /index.html 200`. Vite copies it to `dist/_redirects`, so `/inside`, provider profiles and request URLs resolve to the app on Netlify when opened or refreshed directly. Private request detail requires the request to exist in this browser; another browser gets a helpful missing-request screen.
 
-The `/inside` page has 12 CB decision entries, research boundaries, ethics and AI disclosure, and a planned A/B experiment. It does not collect experiment data or claim results. Real provider integration, payments, logistics, authentication and live customer messaging are not included.
-
-## Source map
-
-- `src/main.jsx`: routes, pages and shared interface components.
-- `src/model.mjs`: validation, matching, prices and guarded stage transitions.
-- `src/styles.css`: branding, components and responsive layouts.
-- `public/assets`: original vector garment illustrations and favicon.
-- `tests/model.test.mjs`: behavioural workflow tests.
-- `docs`: deployment, demo, feature coverage and verification notes.
-
-## Git push (optional alternative to browser upload)
-
-Create an empty repository called `stitchrush` under your GitHub account first. In this source folder, replace YOUR_USERNAME in the remote URL:
-
-```sh
-git init -b main
-git add .
-git commit -m "Add StitchRush prototype"
-git remote add origin https://github.com/YOUR_USERNAME/stitchrush.git
-git push -u origin main
-```
-
-Authenticate using GitHub's supported sign-in/credential flow. Do not paste passwords or access tokens into source files. `node_modules`, `dist` and local secrets are excluded by `.gitignore`.
-
-For later local updates:
-
-```sh
-git add .
-git commit -m "Update StitchRush"
-git push
-```
-
-A connected Netlify project rebuilds from updates to its production branch. Use the same Netlify project; the domain connection does not need to be repeated after each edit.
+See `docs/UPDATE_GUIDE.md`, `docs/WALKTHROUGH.md`, `docs/VERIFICATION.md` and `docs/IMPLEMENTATION_PROMPT.md`.
